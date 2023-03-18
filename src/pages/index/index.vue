@@ -3,22 +3,30 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
+			<button v-on:click="handleClick">{{buttonClick}}</button>
 		</view>
 	</view>
 </template>
 
 <script>
+	function data() {
+		return {
+			title: 'Hello my name is Gerry',
+			buttonClick: "Click"
+		}
+	}
 	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
+		data,
 		onLoad() {
 
 		},
 		methods: {
-
+			handleClick: function() {
+				console.log("hi")
+				uni.navigateTo({
+					url:"../musicList/musicList"
+				})
+			}
 		}
 	}
 </script>
